@@ -21,7 +21,7 @@ body {
     height: 100vh;
     width: 100vw;
     display: grid;
-    overflow: hidden;
+    overflow-x: hidden;
     justify-content: center;
     justify-items: center;
     align-content: center;
@@ -38,7 +38,7 @@ body {
 }
 
 .main__left {
-    display: flex;
+    display: flex;      /*this enables to flex the image to max grid column size */
     margin-right: calc(2vw + 10px);
     background: url(images/bg-pattern-desktop.svg) no-repeat;
     background-size: 200%;
@@ -57,7 +57,7 @@ body {
 
 .main__boximage {
     position: absolute;
-    left: 0;
+    left: 0;                /*Fixed the image to center left side of the main container */
     right: 0;
     top: 0;
     bottom: 0;
@@ -77,8 +77,7 @@ body {
     display: grid;
     grid-auto-rows: min-content;
     row-gap: 10px;
-    overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -90,7 +89,7 @@ h1 {
     font-weight: 400;
     text-decoration: none;
     font-size: var(--font-size);
-    display: grid;
+    display: grid;                  /* enables to set arrow icon to always align to right side */
     grid-auto-flow: column;
     grid-template-columns: 1fr auto;
     column-gap: 20px;
@@ -108,16 +107,18 @@ h1 {
 
 .arrow {
     width: calc(var(--font-size) - 0.3rem);
-    justify-self: end;
+    justify-self: end;                  /* enables to set arrow icon to always align to right side */
 }
 
 .arrow--up {
-    transform: scaleY(-1);
+    transform: scaleY(-1);      /* turn arron upsidedown */
 }
 
 .main__faq__ans {
-    max-width: 440px;
+    max-width: 500px;
     font-size: var(--font-size);
+    line-height: 1.5;
+    text-align: justify;
 }
 
 .main__faq__ans--hidden {
@@ -127,22 +128,26 @@ h1 {
 
 hr {
     border-color: var(--divider-color);
-    margin: calc(1vh + 5px) 0;
+    margin: calc(1vh + 10px) 0;
     border-width: 2px 0 0 0;
 }
 
 .attribution {
-    font-size: 11px;
+    font-size: 14px;
     text-align: center;
+    margin: 20px 0;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(50, 80%, 50%);
 }
 
-@media screen and (max-width: 1050px) and (min-height: 700px) {
+ /* for mobile screen */
+
+@media screen and (max-width: 1100px) and (min-height: 600px) {
     body {
         overflow-y: visible;
+        margin-top: calc(100px - 2vh);
     }
 
     .main--mod {
@@ -152,7 +157,7 @@ hr {
         justify-content: center;
         justify-items: center;
         max-height: unset;
-        max-width: 90%;
+        max-width: 95%;
     }
 
     .main__left {
@@ -161,7 +166,6 @@ hr {
         background-size: 100%;
         padding: 0 0 50px 0;
         overflow: visible;
-        display: block;
         margin: 0;
         width: 70%;
     }
@@ -170,7 +174,6 @@ hr {
         margin: 0;
         height: auto;
         width: 100%;
-        
         margin-top: -45%;
     }
 
@@ -180,13 +183,13 @@ hr {
     
     .main--boximage {
         width: 25%;
-        margin-left: 17%;
-        margin-top: -10%;
+        margin-left: 15.5%;
+        margin-top: -11%;
     }
 
     h1 {
         text-align: center;
-        margin: calc(1vw + 30px) 0;
+        margin: calc(2vw + 30px) 0;
     }
 
     .main__faq {
@@ -207,6 +210,21 @@ hr {
     }
 }
 
+ /* for landscape oriented mobile screen */
+
+@media screen and (max-height: 800px) and (min-width: 600px) {
+    body {
+        max-height: unset ;
+        height: unset;
+        margin: 15px 0;
+        overflow-x: scroll;
+    }
+    
+    .main--mod {
+        max-width: 95% ;
+    }
+}
+
 @keyframes scaleUp {
     0% {
         transform: scale(0);
@@ -216,20 +234,6 @@ hr {
     }
 }
 
-/* @keyframes scaleDown {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
-    }
-} */
-
-
 .animation {
     animation: 0.5s ease-out 0s 1 scaleUp;
 }
-
-/* .animation-remove {
-    animation: 5s ease-out 0s 1 scaleDown;
-} */
