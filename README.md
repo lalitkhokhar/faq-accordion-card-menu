@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/faq-accordion-using-css-grid-and-js-K_tjzMrug)
 - Live Site URL: [Live Site](https://lalitkhokhar.github.io/faq-accordion-card-menu/)
 
 ## My process
